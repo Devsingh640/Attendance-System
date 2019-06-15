@@ -1,0 +1,63 @@
+<%include ./partials/header%>
+
+<div class="row">
+  <h1 style="text-align: center">Welcome To New User Request Form</h1>
+  <div class="rwd-form">
+    <form action="/new" method="post">
+      <div class="form-group">
+        <caption>Personal Details</caption>  
+        <br>
+        <br>
+
+        <label for="username">User Name</label>
+        <input class="form-control" type="text" name="username" autocomplete="off" required />
+
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" autocomplete="off" required />
+
+        <label for="first_name"><b><u>F</u>irst Name:</b></label>
+        <input id="first_name" class="form-control" type="text" name="first_name" placeholder="ABC" required />
+
+        <label for="middle_name"><b><u>M</u>iddle Name:</b></label>
+        <input class="form-control" id="middle_name" type="text" placeholder="OPTIONAL" name="middle_name" />
+
+        <label for="last_name"><b><u>L</u>ast Name:</b></label>
+        <input class="form-control" id="last_name" type="text" name="last_name" placeholder="XYZ" required />
+
+        <label><b><u>G</u>ender:</b></label>
+
+        <input id="male" type="radio" name="gender" placeholder="XYZ" value="male" required />
+        <label id="male">Male</label>
+
+        <input id="female" type="radio" name="gender" placeholder="XYZ" value="female" required />
+        <label id="male">Female</label>
+
+        <input id="transgender" type="radio" name="gender" value="transgender" placeholder="XYZ" required />
+        <label>Transgender</label>
+      </div>
+
+      <div class="form-group">
+        <caption>Contact Details</caption>  
+        <br>
+        <br>
+
+        <label for="email"><b><u>E</u>mail:</b></label>
+        <input class="form-control" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" placeholder="abc@xyz.com" required />
+
+        <label for="mobile_number"><b><u>M</u>obile number:</b></label>
+        <input class="form-control" type="tel" size="10" pattern="[0-9]{10}" name="mobile_number" placeholder="10 DIGIT NUMBER" required />
+
+        <label for="Landline_number"><b><u>L</u>andline number:</b></label>
+        <input class="form-control" id="Landline_number" type="text" name="Landline_number" placeholder="STD code - xxxxxxx" required />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-md btn-primary btn-block">Request</button>
+      </div>
+    </form>
+    <hr>
+    <a href="/">Back</a>
+  </div>
+</div>
+
+<%include ./partials/footer%>
