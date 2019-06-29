@@ -1,6 +1,33 @@
-					<%include ./partials/header%>
+<%include ./partials/header%>
 
-					<h1><b><em>Thank You for your precious time, your response has been successfully recorded.</em></b></h1>
-					<h1><b><em>Our Taarak Support will contact you soon.</em></b></h1>
-					
-					<%include ./partials/footer%>
+<center>
+	<h1>
+		<b>
+			<em>
+				LIST OF REGISTERED USERS
+			</em>
+		</b>
+    </h1>
+</center>
+
+<hr>
+
+<div class="container-fluid">
+	<div class="well">      
+		<% user.forEach(function(users)
+			{%>
+		    	<div class="row">
+		        	<div class="col-md-12">
+		            	<a href="admin/<%=users._id%>" class="btn btn-success" >
+		                	<%=users.username%>
+		           		</a>
+
+		           		<hr>
+		        	</div>
+		    	</div>                             
+			<%});
+		%>
+	</div>
+</div>
+
+<%include ./partials/footer%>

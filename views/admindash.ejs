@@ -1,24 +1,87 @@
 <%include ./partials/header%>
 
+<center>
+	<h1>
+		<b>
+			<em>
+				DASHBOARD
+			</em>
+		</b>
+	</h1>
+</center>
 
-	<h1><b><em>Our Taarak Support </em></b></h1>
+<hr>
 
-	<table width="150px" border="solid">
-		<tr>
-			<td>
-				<div>
-				<a href='/registerAdmin'><button class="btn btn-md btn-primary btn-block">Create New Admin</button></a>
-			</td>
-		</tr>
-		
-		<tr>
-			<td	
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-md-3">
+			<div class="well">
+				<p class="lead">
+					<b>
+						<u>
+							<center>
+								DETAILS
+							</center>
+						</u>
+					</b>
+				</p>
+
+				<li class="list-group-item">
+					<p>
+						<strong>NAME:</strong> 
+						<%= currentUser.first_name  %>
+						<%= currentUser.middle_name  %>
+						<%= currentUser.last_name  %>
+					</p>
+
+					<p>
+						<strong>GENDER:</strong>
+						<%= currentUser.gender %>
+					</p>
+
+					<p>
+						<strong>EMAIL:</strong>
+						<%= currentUser.email %>
+					</p>
+
+					<p>
+						<strong>MOBILE NUMBER:</strong> 
+						<%= currentUser.mobile_number%>
+					</p>
+				</li>
+
 				<br>
-				<a href='/new'><button class="btn btn-md btn-primary btn-block">Create New User</button></a>
-				</div> 
-			</td>
-		</tr>
-	</table>
-	
+
+				<p class="lead">
+					<b>
+						<u>
+							<center>
+								ADMIN RIGHTS
+							</center>
+						</u>
+					</b>
+				</p>
+
+				<li class="list-group-item">
+					<a href='/admin'><button class="btn btn-md btn-primary btn-block">VIEW ALL USERS</button></a>
+				</li>
+
+				<li class="list-group-item">
+					<a href='/new'><button class="btn btn-md btn-primary btn-block">CREATE NEW USER</button></a>
+				</li>
+
+				<li class="list-group-item">
+						<a href='/registerAdmin'><button class="btn btn-md btn-primary btn-block">CREATE NEW ADMIN</button></a>
+				</li>		
+			</div>
+		</div>	
+
+		<div class="col-md-9">
+			<p>
+						
+			</p>
+		</div>
+	</div>
+</div>
 
 <%include ./partials/footer%>

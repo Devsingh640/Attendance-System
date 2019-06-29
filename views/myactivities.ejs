@@ -1,0 +1,36 @@
+<%include ./partials/header%>
+
+<center>
+	<h1>
+		<b>
+			<em>
+				ACTIVITY SHEET
+			</em>
+		</b>
+	</h1>
+</center>
+
+<hr>
+
+<div class="container-fluid">	    
+	<div class="well">     
+		<%user.dailys.reverse().forEach(function(dail)
+			{%>
+				<div class="row">	
+					<div class="col-md-12">               
+						<p>
+							<%=dail.text%>
+							
+							<span class="pull-right" text-transform="capitalize">
+								<%=dail.createdAt%>
+							</span>  
+						</p>
+						<hr>                       
+					</div>
+				</div>                                 
+			<%});
+		%>        
+	</div>
+</div>
+
+<%include ./partials/footer%>

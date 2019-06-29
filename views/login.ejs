@@ -1,24 +1,44 @@
 <%include ./partials/header%>
+
 <div class="row">
-  <h1 style="text-align: center">Staff-Login</h1>
+  <h1 style="text-align: center">
+  Staff-Login
+  </h1>
+
   <div class="rwd-form">
     <form action="/login" method="post">
       <div class="form-group">
-        <label for="username">User Name</label>
+        <label for="username">
+          User Name
+        </label>
         <input class="form-control" type="text" name="username" autocomplete="off" required />
       </div>
+
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">
+        Password
+        </label>
         <input class="form-control" type="password" name="password" autocomplete="off" required />
       </div>
+
       <div class="form-group">
-        <button class="btn btn-md btn-primary btn-block">Login</button>
+        <button class="btn btn-md btn-primary btn-block">
+        Login
+        </button>
       </div>
-      <span>Forgot your password? <a href="/keyreset">Reset</a></span>
-      <hr> 
+
+      <hr>
+
+      <span>
+        Reset your password
+          <a href="/password_reset">
+            Here
+          </a>
+      </span> 
     </form>
-    <hr>
-    <a href="/">Back</a>
   </div>
 </div>
+
+<br>
+
 <%include ./partials/footer%>

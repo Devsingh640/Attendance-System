@@ -1,28 +1,88 @@
-					<%include ./partials/header%>
+<%include ./partials/header%>
+
+<center>
+	<h1>
+		<b>
+			<em>
+				DASHBOARD
+			</em>
+		</b>
+    </h1>
+</center>
+
+<hr>
+
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-md-3">
+			<div class="well">
+				<p class="lead">
+					<b>
+						<u>
+							<center>
+								DETAILS
+							</center>
+						</u>
+					</b>		
+				</p>
+
+				<li class="list-group-item">
+					<p>
+						<strong>NAME:</strong> 
+						<%= currentUser.first_name  %>
+						<%= currentUser.middle_name  %>
+						<%= currentUser.last_name  %>
+					</p>
 
 					<p>
-						Hello hope you are doing well.
-						Have a nice day, work good, be safe and keep updating your tracks.
+						<strong>GENDER:</strong>
+						<%= currentUser.gender %>
 					</p>
-					
-					<hr>
-		
-					<form>
-						<div>
-							<label for="Working_Today">
-								Select Today Date :
-							</label>
-  							<input type="Date" id="Working_Today" name="Working_Today" min="" max="" />
 
-  							<label for="destination">
-  								Destination :
-  							</label>
-							<input type="text" name="" />
+					<p>
+						<strong>EMAIL:</strong>
+						<%= currentUser.email %>
+					</p>
 
-							<button type="button" onclick="document.getElementById('tt').innerHTML = Date()">attandance</button>
-							<p id ="tt"></p>	
-						</div>
-					</form>
+					<p>
+						<strong>MOBILE NUMBER:</strong> 
+						<%= currentUser.mobile_number%>
+					</p>	
+				</li>
 
-					<%include ./partials/footer%>
+			  	<p class="lead">
+					<b>
+						<u>
+							<center>
+								RIGHTS
+							</center>
+						</u>
+					</b>		
+				</p>
+
+				<li class="list-group-item">
+					<a href="/stafflogin/edit" class="btn btn-md btn-warning btn-block">EDIT PROFILE</a>
+			  	</li>
+
+			  	<li class="list-group-item">
+					<a href='/attendanceform'><button class="btn btn-md btn-primary btn-block">MARK TODAY's ATTENDANCE</button></a>
+				</li>
+
+				<li class="list-group-item">
+						<a href='/myattendance'><button class="btn btn-md btn-primary btn-block">VIEW YOUR ATTENDANCE</button></a>
+				</li>
+
+			  	<li class="list-group-item">
+					<a href='/activityform'><button class="btn btn-md btn-primary btn-block">ADD TODAY's ACTIVITIES</button></a>
+				</li>
+
+				<li class="list-group-item">
+						<a href='/myactivities'><button class="btn btn-md btn-primary btn-block">VIEW YOUR ACTIVITIES</button></a>
+				</li>
+			</div>			
+		</div>
+	</div>
+</div>
+
+<%include ./partials/footer%>
 					

@@ -1,0 +1,115 @@
+<%include ./partials/header%>
+
+<center>
+	<h1>
+		<b>
+			<em>
+				<p>
+					PROFILE OF 
+					<%=user.first_name  %>
+					<%= user.middle_name  %>
+					<%= user.last_name  %>
+				</p>
+			</em>
+		</b>
+	</h1>
+</center>
+
+<hr>
+
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-md-3">
+			<div class="well"> 
+				<p class="lead">
+					<b>
+						<u>
+							<center>
+								DETAILS
+							</center>
+						</u>
+					</b>		
+				</p>
+
+				<li class="list-group-item">
+					<p>
+						<strong>NAME:</strong> 
+						<%=user.first_name  %>
+						<%= user.middle_name  %>
+						<%= user.last_name  %>
+					</p>
+
+					<p>
+						<strong>GENDER:</strong>
+						<%= user.gender %>
+					</p>
+
+					<p>
+						<strong>EMAIL:</strong>
+						<%= user.email %>
+					</p>
+
+					<p>
+						<strong>MOBILE NUMBER:</strong> 
+						<%= user.mobile_number%>
+					</p>	
+				</li>
+
+			  	<p class="lead">
+					<b>
+						<u>
+							<center>
+								ADMIN RIGHTS
+							</center>
+						</u>
+					</b>		
+				</p>
+
+				<li class="list-group-item">
+					<form action="/admin/<%=user._id%>?_method=DELETE" method="post">
+			           	<button class="btn btn-md btn-danger btn-block"> 
+							DELETE USER
+						</button>
+					</form>
+				</li>
+
+				<li class="list-group-item">
+					<a href="/admin/<%=user._id%>/edit" class="btn btn-md btn-warning btn-block">
+						EDIT PROFILE 
+					</a>
+			  	</li>
+
+			  	<li class="list-group-item">
+					<a href="/admin/<%=user._id%>/attendance"  class="btn btn-md btn-success btn-block">
+						USER ATTENDANCE
+					</a>
+				</li>		
+			</div>
+		</div>
+
+		<div class="col-md-9">  
+			<div class="well">   
+				<%user.dailys.reverse().forEach(function(dail) 
+					{%>
+						<div class="row">
+							<div class="col-md-12">               
+								<p>
+					    			<%=dail.text%>
+							
+									<span class="pull-right" text-transform="capitalize" >
+										<%=dail.createdAt%>
+									</span>
+								</p>
+
+								<hr>                         
+							</div>
+						</div>                                 
+					<%});
+				%> 
+			</div>       
+		</div>
+	</div>
+</div>
+
+<%include ./partials/footer%>
+					
