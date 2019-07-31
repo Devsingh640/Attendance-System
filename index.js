@@ -242,7 +242,7 @@ app.get('/admin',isAdmin,(req,res) => {
   
 });
 
-app.post('/login', passport.authenticate("user", { //om changed
+app.post('/login', passport.authenticate("user", {
   successRedirect : "/stafflogin",
   failureRedirect : "/login"  ,
   failureFlash : true 
@@ -277,17 +277,6 @@ app.get('/myattendance',isLoggedIn,function(req,res){
     }
   });
 });
-
-// app.get('/attendanceform',isLoggedIn,function(req,res){
-//    user.findById(req.user._id).populate("attendance").exec(function(err,user){
-//     if(err)
-//     console.log(err);
-//     else {
-//       //console.log(comment);
-//       res.render("attendanceform" ,{user:user});
-//     }
-//   });
-// });
 
 app.get('/myactivities',isLoggedIn,function(req,res){
    user.findById(req.user._id).populate("dailys").exec(function(err,user){
@@ -355,7 +344,7 @@ else
 });
 
 app.post("/activityform",isLoggedIn,function(req,res)
-{    console.log(req.user.username);//is tarah hum current user k array mai uska aaj ka kaam add kr rahe hai 
+{    console.log(req.user.username);
    user.findById(req.user._id,function(err,user){
     if(err)
     {
@@ -386,7 +375,7 @@ app.post("/activityform",isLoggedIn,function(req,res)
  });
 
 app.post("/attendanceform",isLoggedIn,function(req,res)
-{    //console.log(req.user.username);//is tarah hum current user k array mai uska aaj ka kaam add kr rahe hai 
+{    //console.log(req.user.username);
    user.findById(req.user._id,function(err,user){
     if(err)
     {
@@ -445,12 +434,11 @@ app.get('/admin/admindashboard',isAdmin,(req,res) => {
   res.render("admindash");
 });
 app.get("/admin/:id",isAdmin,function(req,res){
-  user.findById(req.params.id).populate("dailys").exec(function(err,user){//yaha pe humne id leke uske sath data dhunda aur uske sath humne daily wala array bhi sath ai
+  user.findById(req.params.id).populate("dailys").exec(function(err,user){
     if(err)
     console.log(err);
     else {
       //console.log(comment);
-      //niche wali line se humne usse usershow pe bheja aur user jo ki humme mila usse bhibheja jis hum kr sake ye sab print
       res.render("usershow" ,{user:user});
 
     }
@@ -458,12 +446,11 @@ app.get("/admin/:id",isAdmin,function(req,res){
 
 });
 app.get("/admin/:id/attendance",isAdmin,function(req,res){
-  user.findById(req.params.id).populate("attendance").exec(function(err,user){//yaha pe humne id leke uske sath data dhunda aur uske sath humne daily wala array bhi sath ai
+  user.findById(req.params.id).populate("attendance").exec(function(err,user){
     if(err)
     console.log(err);
     else {
       //console.log(comment);
-      //niche wali line se humne usse usershow pe bheja aur user jo ki humme mila usse bhibheja jis hum kr sake ye sab print
       res.render("myattendance" ,{user:user});
 
     }
